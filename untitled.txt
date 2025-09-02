@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You – AZYLU</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Mono&display=swap');
+
+  body {
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+    background-color: #0A0A0A;
+    color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .glitch {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    position: relative;
+    color: #F5F5F5;
+    letter-spacing: 5px;
+    animation: glitchAnim 2s infinite;
+  }
+
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+  }
+
+  .glitch::before {
+    animation: glitchTop 2s infinite;
+    color: #A0A0A0;
+    clip: rect(0, 900px, 0, 0);
+  }
+
+  .glitch::after {
+    animation: glitchBottom 2s infinite;
+    color: #F5F5F5;
+    clip: rect(0, 900px, 0, 0);
+  }
+
+  @keyframes glitchAnim {
+    0%, 20%, 40%, 60%, 80%, 100% { transform: translate(0); }
+    10% { transform: translate(-2px, -2px); }
+    30% { transform: translate(2px, 2px); }
+    50% { transform: translate(-2px, 2px); }
+    70% { transform: translate(2px, -2px); }
+    90% { transform: translate(-1px, 1px); }
+  }
+
+  @keyframes glitchTop {
+    0% { clip: rect(2px, 9999px, 20px, 0); }
+    50% { clip: rect(10px, 9999px, 30px, 0); }
+    100% { clip: rect(2px, 9999px, 20px, 0); }
+  }
+
+  @keyframes glitchBottom {
+    0% { clip: rect(25px, 9999px, 40px, 0); }
+    50% { clip: rect(30px, 9999px, 45px, 0); }
+    100% { clip: rect(25px, 9999px, 40px, 0); }
+  }
+
+  p {
+    color: #A0A0A0;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    animation: fadeIn 2s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px);}
+    100% { opacity: 1; transform: translateY(0);}
+  }
+
+  .btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 28px;
+    font-size: 1rem;
+    border: 2px solid #F5F5F5;
+    color: #F5F5F5;
+    text-decoration: none;
+    transition: 0.3s, transform 0.3s;
+  }
+
+  .btn:hover {
+    background-color: #1C1C1C;
+    transform: scale(1.05);
+  }
+</style>
+</head>
+<body>
+
+  <h1 class="glitch" data-text="THANK YOU">THANK YOU</h1>
+  <p>For trusting AZYLU. You are now part of the movement.</p>
+  <a href="index.html" class="btn">Back to AZYLU</a>
+
+</body>
+</html>
